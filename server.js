@@ -1,13 +1,15 @@
-require("dotenv").config();
+//
+import db from "./db.js";
+//
 
 const port = process.env.PORT || 8000;
 
 // initate express app
-const express = require("express");
+import express from "express";
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("server running");
+  res.send(db);
 });
 
 app.listen(port, () => console.log(`app running on port:${port}`));
